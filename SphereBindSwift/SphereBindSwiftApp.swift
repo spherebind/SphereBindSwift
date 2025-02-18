@@ -14,9 +14,15 @@ struct SphereBindSwiftApp: App {
         FirebaseApp.configure()
     }
     
+    @AppStorage("isLoggedIn") private var isLoggedIn = false // Estado de login global
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isLoggedIn {
+                HomeView() // Si ya está logueado, ir directo a Home
+            } else {
+                LoginView() // Si no, mostrar Login
+            }
         }
     }
 }

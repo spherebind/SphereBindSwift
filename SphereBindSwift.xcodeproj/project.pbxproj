@@ -14,6 +14,8 @@
 		2A0674BE2D0109AA006A0655 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674BD2D0109AA006A0655 /* FirebaseRemoteConfig */; };
 		2A0674C02D0109AA006A0655 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674BF2D0109AA006A0655 /* FirebaseStorage */; };
 		2A0674C22D0109AA006A0655 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674C12D0109AA006A0655 /* FirebaseVertexAI */; };
+		2A7D81F62D52EB02007F606D /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7D81F52D52EB02007F606D /* FirebaseMLModelDownloader */; };
+		2A7D81F82D52ECC8007F606D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7D81F72D52ECC8007F606D /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +67,11 @@
 				2A0674BC2D0109AA006A0655 /* FirebaseMessaging in Frameworks */,
 				2A0674BA2D0109AA006A0655 /* FirebaseCrashlytics in Frameworks */,
 				2A0674B62D0109AA006A0655 /* FirebaseAnalytics in Frameworks */,
+				2A7D81F62D52EB02007F606D /* FirebaseMLModelDownloader in Frameworks */,
 				2A0674B82D0109AA006A0655 /* FirebaseAuth in Frameworks */,
 				2A0674C22D0109AA006A0655 /* FirebaseVertexAI in Frameworks */,
 				2A0674BE2D0109AA006A0655 /* FirebaseRemoteConfig in Frameworks */,
+				2A7D81F82D52ECC8007F606D /* FirebaseCore in Frameworks */,
 				2A0674C02D0109AA006A0655 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,12 +93,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A7D81F42D52EB02007F606D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2AB3AE0F2CF975DE0052CBE0 = {
 			isa = PBXGroup;
 			children = (
 				2AB3AE1A2CF975DE0052CBE0 /* SphereBindSwift */,
 				2AB3AE2B2CF975DF0052CBE0 /* SphereBindSwiftTests */,
 				2AB3AE352CF975DF0052CBE0 /* SphereBindSwiftUITests */,
+				2A7D81F42D52EB02007F606D /* Frameworks */,
 				2AB3AE192CF975DE0052CBE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,6 +148,8 @@
 				2A0674BD2D0109AA006A0655 /* FirebaseRemoteConfig */,
 				2A0674BF2D0109AA006A0655 /* FirebaseStorage */,
 				2A0674C12D0109AA006A0655 /* FirebaseVertexAI */,
+				2A7D81F52D52EB02007F606D /* FirebaseMLModelDownloader */,
+				2A7D81F72D52ECC8007F606D /* FirebaseCore */,
 			);
 			productName = SphereBindSwift;
 			productReference = 2AB3AE182CF975DE0052CBE0 /* SphereBindSwift.app */;
@@ -421,21 +435,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_ASSET_PATHS = "\"SphereBindSwift/Preview Content\"";
 				DEVELOPMENT_TEAM = 5S22W76BBZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sphere Bind";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhomorales.spherebindswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -450,21 +466,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_ASSET_PATHS = "\"SphereBindSwift/Preview Content\"";
 				DEVELOPMENT_TEAM = 5S22W76BBZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sphere Bind";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhomorales.spherebindswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -632,6 +650,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseVertexAI;
+		};
+		2A7D81F52D52EB02007F606D /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		2A7D81F72D52ECC8007F606D /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

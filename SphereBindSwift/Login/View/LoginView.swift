@@ -9,18 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
-    @State private var isLoggedIn = false
+    @AppStorage("isLoggedIn") private var isLoggedIn = false // Guarda el estado de login
     
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-                
-                Text("Iniciar sesión")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.bottom, 10)
-                
                 Text("Ingresa tus datos para continuar")
                     .font(.subheadline)
                     .foregroundColor(.gray)
@@ -44,10 +38,15 @@ struct LoginView: View {
                         .padding(.horizontal)
                 }
                 
+                if viewModel.isLoading {
+                    ProgressView()
+                        .padding()
+                }
+                
                 Button(action: {
                     viewModel.login { success in
                         if success {
-                            isLoggedIn = true
+                            isLoggedIn = true // Guarda el login en AppStorage
                         }
                     }
                 }) {
@@ -60,30 +59,24 @@ struct LoginView: View {
                 }
                 .padding(.horizontal)
                 .padding(.top, 20)
+                .disabled(viewModel.isLoading)
                 
                 Spacer()
                 
-                // Navegación a Registro con NavigationLink
                 NavigationLink(destination: RegisterView()) {
                     Text("¿No tienes cuenta? Regístrate")
                         .foregroundColor(.blue)
                         .padding(.bottom, 5)
                 }
                 
-                // Navegación a Olvidé la Contraseña con NavigationLink
                 NavigationLink(destination: ForgotPasswordView()) {
                     Text("¿Olvidaste la contraseña?")
                         .foregroundColor(.blue)
                         .padding(.top, 5)
                 }
-                
-                // Navegación a HomeView con NavigationLink
-                NavigationLink(destination: HomeView(), isActive: $isLoggedIn) {
-                    EmptyView() // No mostramos ningún enlace visual, solo activamos la navegación
-                }
             }
             .padding()
-            .navigationTitle("Login")
+            .navigationTitle("Iniciar sesión")
         }
     }
 }
@@ -91,6 +84,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-            .environmentObject(LoginViewModel()) // Inicializa el ViewModel para la vista previa
+            .environmentObject(LoginViewModel())
     }
 }
