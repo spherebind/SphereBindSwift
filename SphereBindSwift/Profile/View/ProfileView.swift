@@ -9,23 +9,60 @@ import SwiftUI
 
 struct ProfileView: View {
     @AppStorage("isLoggedIn") private var isLoggedIn = false
+    @State private var showLogoutAlert = false
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 32) {
+            // Imagen de perfil
             Image(systemName: isLoggedIn ? "person.fill" : "person")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
-            
-            Text(isLoggedIn ? "Usuario Logeado" : "No has iniciado sesión")
-                .font(.title)
-            
-            Button("Cerrar Sesión") {
-                isLoggedIn = false
+                .padding()
+
+            // Texto de usuario
+            VStack(spacing: 8) {
+                Text(isLoggedIn ? "Usuario Logeado" : "No has iniciado sesión")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                
+                if isLoggedIn {
+                    Text("Tu cuenta está activa")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             }
-            .buttonStyle(.borderedProminent)
+
+            Spacer()
+
+            // Botón de cerrar sesión con alerta
+            if isLoggedIn {
+                Button(role: .destructive) {
+                    showLogoutAlert = true
+                } label: {
+                    Text("Cerrar Sesión")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
+                .alert("¿Cerrar sesión?", isPresented: $showLogoutAlert) {
+                    Button("Cancelar", role: .cancel) { }
+                    Button("Cerrar Sesión", role: .destructive) {
+                        withAnimation {
+                            isLoggedIn = false
+                        }
+                    }
+                }
+            }
         }
         .padding()
+        .frame(maxHeight: .infinity)
+        .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
+        .animation(.easeInOut, value: isLoggedIn)
     }
 }
