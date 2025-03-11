@@ -18,10 +18,12 @@ struct SphereBindSwiftApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if isLoggedIn {
-                HomeView() // Si ya está logueado, ir directo a Home
-            } else {
-                LoginView() // Si no, mostrar Login
+            NavigationStack {
+                if isLoggedIn {
+                    HomeView() // Si ya está logueado, ir directo a Home
+                } else {
+                    LoginView() // Si no, mostrar Login
+                }
             }
         }
     }
