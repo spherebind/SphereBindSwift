@@ -3,4 +3,96 @@
    uuid = "F4EF3EE0-904D-45C5-B6E7-2A5988F13F8E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BF157FFA-5C89-4E88-8DDB-946628F96B67"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SphereBindSwift/Detail/ViewModel/DetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "generateCode(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "478983B2-39DD-4BD8-96FE-0CE1ACA43540"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SphereBindSwift/AI/PromptManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "makeQuestion(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "478983B2-39DD-4BD8-96FE-0CE1ACA43540 - 71869455886b4dc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SphereBindSwift.PromptManager.makeQuestion(Swift.String) async -&gt; Swift.String"
+                  moduleName = "SphereBindSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinhomorales/SphereBindSwift/SphereBindSwift/AI/PromptManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "478983B2-39DD-4BD8-96FE-0CE1ACA43540 - 4b904dbc89747c1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static SphereBindSwift.PromptManager.makeQuestion(Swift.String) async -&gt; Swift.String"
+                  moduleName = "SphereBindSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinhomorales/SphereBindSwift/SphereBindSwift/AI/PromptManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "478983B2-39DD-4BD8-96FE-0CE1ACA43540 - 534b839ee4189c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SphereBindSwift.PromptManager.makeQuestion(Swift.String) async -&gt; Swift.String"
+                  moduleName = "SphereBindSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinhomorales/SphereBindSwift/SphereBindSwift/AI/PromptManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "478983B2-39DD-4BD8-96FE-0CE1ACA43540 - 52edd1ca31352bc5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for static SphereBindSwift.PromptManager.makeQuestion(Swift.String) async -&gt; Swift.String"
+                  moduleName = "SphereBindSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinhomorales/SphereBindSwift/SphereBindSwift/AI/PromptManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
