@@ -96,20 +96,3 @@ struct DetailView: View {
         }
     }
 }
-
-// Vista previa para desarrollo
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            DetailView(
-                viewModel: DetailViewModel(
-                    item: ItemModel(
-                        image: UIImage(systemName: "doc.text"),
-                        title: "Documento de prueba",
-                        date: "11 Mar, 2025"
-                    )
-                )
-            )
-        }
-    }
-}

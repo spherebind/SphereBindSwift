@@ -13,9 +13,10 @@
 		2A0674BC2D0109AA006A0655 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674BB2D0109AA006A0655 /* FirebaseMessaging */; };
 		2A0674BE2D0109AA006A0655 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674BD2D0109AA006A0655 /* FirebaseRemoteConfig */; };
 		2A0674C02D0109AA006A0655 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674BF2D0109AA006A0655 /* FirebaseStorage */; };
-		2A0674C22D0109AA006A0655 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A0674C12D0109AA006A0655 /* FirebaseVertexAI */; };
 		2A7D81F62D52EB02007F606D /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7D81F52D52EB02007F606D /* FirebaseMLModelDownloader */; };
 		2A7D81F82D52ECC8007F606D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7D81F72D52ECC8007F606D /* FirebaseCore */; };
+		2AD24CBE2DA5F00C00CDE699 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD24CBD2DA5F00C00CDE699 /* FirebaseFirestore */; };
+		2AD24CC02DA5F01500CDE699 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD24CBF2DA5F01500CDE699 /* FirebaseVertexAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +68,11 @@
 				2A0674BC2D0109AA006A0655 /* FirebaseMessaging in Frameworks */,
 				2A0674BA2D0109AA006A0655 /* FirebaseCrashlytics in Frameworks */,
 				2A0674B62D0109AA006A0655 /* FirebaseAnalytics in Frameworks */,
+				2AD24CBE2DA5F00C00CDE699 /* FirebaseFirestore in Frameworks */,
 				2A7D81F62D52EB02007F606D /* FirebaseMLModelDownloader in Frameworks */,
 				2A0674B82D0109AA006A0655 /* FirebaseAuth in Frameworks */,
-				2A0674C22D0109AA006A0655 /* FirebaseVertexAI in Frameworks */,
 				2A0674BE2D0109AA006A0655 /* FirebaseRemoteConfig in Frameworks */,
+				2AD24CC02DA5F01500CDE699 /* FirebaseVertexAI in Frameworks */,
 				2A7D81F82D52ECC8007F606D /* FirebaseCore in Frameworks */,
 				2A0674C02D0109AA006A0655 /* FirebaseStorage in Frameworks */,
 			);
@@ -147,9 +149,10 @@
 				2A0674BB2D0109AA006A0655 /* FirebaseMessaging */,
 				2A0674BD2D0109AA006A0655 /* FirebaseRemoteConfig */,
 				2A0674BF2D0109AA006A0655 /* FirebaseStorage */,
-				2A0674C12D0109AA006A0655 /* FirebaseVertexAI */,
 				2A7D81F52D52EB02007F606D /* FirebaseMLModelDownloader */,
 				2A7D81F72D52ECC8007F606D /* FirebaseCore */,
+				2AD24CBD2DA5F00C00CDE699 /* FirebaseFirestore */,
+				2AD24CBF2DA5F01500CDE699 /* FirebaseVertexAI */,
 			);
 			productName = SphereBindSwift;
 			productReference = 2AB3AE182CF975DE0052CBE0 /* SphereBindSwift.app */;
@@ -646,11 +649,6 @@
 			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		2A0674C12D0109AA006A0655 /* FirebaseVertexAI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseVertexAI;
-		};
 		2A7D81F52D52EB02007F606D /* FirebaseMLModelDownloader */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -660,6 +658,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
+		};
+		2AD24CBD2DA5F00C00CDE699 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2AD24CBF2DA5F01500CDE699 /* FirebaseVertexAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A0674B42D0109AA006A0655 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseVertexAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

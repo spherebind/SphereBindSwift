@@ -58,7 +58,6 @@ final class DetailViewModel: ObservableObject {
                 if recognizedText.isEmpty {
                     self.recognizedText = "No se encontró texto en la imagen"
                 } else {
-//                    self.recognizedText = recognizedText
                     self.generateCode(from: recognizedText)
                 }
             }
@@ -81,12 +80,40 @@ final class DetailViewModel: ObservableObject {
     
     private func generateCode(from text: String) {
         Task {
-            let prompt = "Genera código basado en el siguiente texto: \n\(text)"
             let response = await PromptManager.makeQuestion(text)
             
             DispatchQueue.main.async { [self] in
                 recognizedText = response
+                parseResponseAndPrintNames(from: response)
             }
+        }
+    }
+    
+    private func parseResponseAndPrintNames(from response: String) {
+        let cleaned = response
+            .replacingOccurrences(of: "```json", with: "")
+            .replacingOccurrences(of: "```", with: "")
+            .replacingOccurrences(of: "json", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        guard let data = cleaned.data(using: .utf8) else {
+            print("Error al convertir a Data")
+            return
+        }
+        
+        struct Person: Codable {
+            let name: String
+            let lastName: String
+            let email: String
+        }
+        
+        do {
+            let people = try JSONDecoder().decode([Person].self, from: data)
+            for person in people {
+                print("Nombre: \(person.name)")
+            }
+        } catch {
+            print("Error al decodificar: \(error)")
         }
     }
     

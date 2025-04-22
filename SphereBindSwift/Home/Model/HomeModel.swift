@@ -7,9 +7,16 @@
 
 import SwiftUI
 
-struct ItemModel: Identifiable {
-    let id = UUID()
-    let image: UIImage?
-    let title: String
-    let date: String
+struct ItemModel: Identifiable, Codable {
+    var id: String
+    var title: String
+    var date: String
+    var imageURL: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, date, imageURL
+    }
+    
+    // Imagen cacheada (no se guarda en Firestore)
+    var image: UIImage?
 }

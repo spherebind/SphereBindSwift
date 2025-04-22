@@ -19,8 +19,8 @@ struct PromptManager {
             let model = vertex.generativeModel(modelName: modelName)
             
             // Genera contenido basado en el prompt
-            let fullPrompt = Prompt.subject + prompt
-//            let fullPrompt = "Hola Gemina! Quien es KEVINHO MORALES"
+//            let fullPrompt = Prompt.subject + prompt
+            let fullPrompt = "Genera una estructura JSON en base a este texto extraído: \n\(prompt). Solo dejame el JSON en String porque lo voy a necesitar para serializarlo con Codable. Recuerda correo en minúculas. Sepáralo en name, lastName y email"
             let response = try await model.generateContent(fullPrompt)
             
             // Retorna el texto generado o un mensaje de error si la respuesta es nula

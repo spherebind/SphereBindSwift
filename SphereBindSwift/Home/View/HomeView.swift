@@ -14,30 +14,39 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            if viewModel.items.isEmpty {
-                Text("No hay eventos disponibles")
-                    .foregroundColor(.gray)
-                    .font(.title)
+            if viewModel.isLoading {
+                ProgressView("Cargando eventos...")
                     .padding()
             } else {
-                List(viewModel.items) { item in
-                    NavigationLink(destination: DetailView(viewModel: DetailViewModel(item: item))) {
-                        HStack {
-                            Image(uiImage: item.image ?? UIImage(systemName: "photo")!)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            
-                            VStack(alignment: .leading) {
-                                Text(item.title)
-                                    .font(.headline)
-                                Text(item.date)
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
+                List {
+                    ForEach(viewModel.items) { item in
+                        NavigationLink(destination: DetailView(viewModel: DetailViewModel(item: item))) {
+                            HStack {
+                                if let image = item.image {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 50, height: 50)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                } else {
+                                    Image(systemName: "photo")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(.gray)
+                                }
+
+                                VStack(alignment: .leading) {
+                                    Text(item.title)
+                                        .font(.headline)
+                                    Text(item.date)
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                }
                             }
                         }
                     }
+                    .onDelete(perform: viewModel.deleteItem)
                 }
             }
         }
