@@ -16,6 +16,8 @@ final class DetailViewModel: ObservableObject {
     @Published var isProcessing: Bool = false
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
+    @Published var people: [Person] = []
+    @Published var showListView: Bool = false
     
     init(item: ItemModel) {
         self.item = item
@@ -100,17 +102,12 @@ final class DetailViewModel: ObservableObject {
             print("Error al convertir a Data")
             return
         }
-        
-        struct Person: Codable {
-            let name: String
-            let lastName: String
-            let email: String
-        }
-        
+
         do {
-            let people = try JSONDecoder().decode([Person].self, from: data)
-            for person in people {
-                print("Nombre: \(person.name)")
+            let decodedPeople = try JSONDecoder().decode([Person].self, from: data)
+            DispatchQueue.main.async {
+                self.people = decodedPeople
+                self.showListView = true
             }
         } catch {
             print("Error al decodificar: \(error)")

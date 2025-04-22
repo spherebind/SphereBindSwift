@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+// Importar DetailListView y DetailListViewModel si están en otro archivo
 
 struct DetailView: View {
     @StateObject var viewModel: DetailViewModel
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack(spacing: 20) {
+        NavigationStack {
+            VStack(spacing: 20) {
             // Imagen principal
             if let image = viewModel.item.image {
                 Image(uiImage: image)
@@ -84,6 +86,28 @@ struct DetailView: View {
             }
             .disabled(viewModel.isProcessing)
             .padding(.bottom)
+
+            // Botón "Ver listado" cuando haya personas parseadas
+            if viewModel.people.count > 0 {
+                Button {
+                    viewModel.showListView = true
+                } label: {
+                    HStack {
+                        Image(systemName: "list.bullet")
+                        Text("Ver listado")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                }
+                .sheet(isPresented: $viewModel.showListView) {
+                    DetailListView(viewModel: DetailListViewModel(people: viewModel.people))
+                }
+            }
         }
         .navigationTitle(viewModel.item.title)
         .navigationBarTitleDisplayMode(.inline)
@@ -94,5 +118,6 @@ struct DetailView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
+    }
     }
 }
